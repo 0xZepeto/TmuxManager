@@ -42,6 +42,7 @@ BOTS_NO_INPUT=(
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/oasis-bot:node main.js:"
     "CAPFIZZ:/home/hg680p/Capfizz-BOT:node main.js:"
+    #STB8"LAYEREDGE_17k:/home/hg680p/LedgeBot:node mainRef.js:"
 
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
     #❌"OpenLedger:/home/hg680p/opledBot:node main.js:"
