@@ -33,7 +33,6 @@ echo ""
 
 # Daftar bot tanpa input otomatis
 BOTS_NO_INPUT=(
-    "NGARIT:/home/hg680p/NGARIT:node index.js:"
     "DEPINED:/home/hg680p/Depined-BOT:node main.js:"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
@@ -42,10 +41,11 @@ BOTS_NO_INPUT=(
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/oasis-bot:node main.js:"
     "CAPFIZZ:/home/hg680p/Capfizz-BOT:node main.js:"
-    "OpenLedger:/home/hg680p/opledBot:node main.js:"
+
+    #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
+    #❌"OpenLedger:/home/hg680p/opledBot:node main.js:"
     #❌"NAORIS:/home/hg680p/Naoris-BOT:node main.js:"
     #❌<BOT ERROR>"LISK:/home/hg680p/liskPortsl:node main.js:"
-    #❌<BOT ERROR>"BERATRAX:/home/hg680p/beratraxBot:node main.js:"
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
     #❌<BOT ERROR>"MESHCHAIN:/home/hg680p/mesh-bot:node main.js:"
     #❌<BOT ERROR>"LITAS:/home/hg680p/litasBot:node main.js:"
