@@ -1,4 +1,4 @@
-#!/bin/bashlfg
+#!/bin/bash
 
 # Format tanggal dan waktu
 DATE_NOW=$(date "+%Y-%m-%d %H:%M:%S")
