@@ -34,7 +34,7 @@ echo ""
 # Daftar bot tanpa input otomatis
 BOTS_NO_INPUT=(
     "DEPINED:/home/hg680p/Depined-BOT:node main.js:"
-    "GRASS:/home/hg680p/grass-network-bot:node index.js:Down C-m
+    "GRASS:/home/hg680p/grass-network-bot:node index.js:Down C-m"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
     "TEAFI:/home/hg680p/teaFiBot:node main.js:"
