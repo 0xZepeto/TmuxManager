@@ -58,6 +58,7 @@ BOTS_NO_INPUT=(
 BOTS_WITH_INPUT=(
     "BLESS:/home/hg680p/bless-bot:node main.js:n"
     "TENEO:/home/hg680p/teneo-bot:node index.js:n y"
+    "KITE-Ai:/home/hg680p/KiteAi-BOT:node index.js:1 2"
 )
 
 # Fungsi untuk menjalankan bot dalam tmux dengan efek loading
