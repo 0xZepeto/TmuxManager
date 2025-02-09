@@ -77,7 +77,7 @@ start_bot() {
         spinner $!
         
         # Kirim input otomatis jika ada
-        if [[ -n "$INPUTS" ]]; then
+        if [[ "$SESSION" != "FUNCTOR" ]]; then
             sleep 2
             for INPUT in $INPUTS; do
                 tmux send-keys -t "$SESSION" "$INPUT" C-m
