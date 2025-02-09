@@ -42,6 +42,8 @@ BOTS_NO_INPUT=(
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/oasis-bot:node main.js:"
     "CAPFIZZ:/home/hg680p/Capfizz-BOT:node main.js:"
+    "KALEIDO:/home/hg680p/KaleidoFinance-Auto-Bot:node main.js:"
+    "SparkChain:/home/hg680p/Sparkchain-Auto-Bot:node index.js:"
     #STB8"LAYEREDGE_17k:/home/hg680p/LedgeBot:node mainRef.js:"
 
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
