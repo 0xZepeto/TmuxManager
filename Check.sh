@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Warna
+GREEN='\033[1;32m'
+RED='\033[1;31m'
 BLUE='\033[1;34m'
 RESET='\033[0m'
 
 # File log
-LOGFILE="/home/hg680p/TmuxManager/AutoCheck.log"
+LOGFILE="/home/hg680p/TmuxManager/Check.log"
 
 # Daftar STB dan modem yang sesuai
 declare -A STB_MODEM=(
@@ -24,21 +26,22 @@ HOSTNAME=$(hostname)
 
 # Cek apakah hostname ada dalam daftar STB_MODEM
 if [[ -z "${STB_MODEM[$HOSTNAME]}" ]]; then
-    echo -e "${BLUE}$(date) - Hostname tidak ditemukan dalam daftar STB. Keluar...${RESET}" | tee -a "$LOGFILE"
+    echo -e "${RED}$(date) - Hostname tidak ditemukan dalam daftar STB. Keluar...${RESET}" | tee -a "$LOGFILE"
     exit 1
 fi
 
 MODEM_NAME="${STB_MODEM[$HOSTNAME]}"
 
-echo -e "${BLUE}$(date) - Memulai pengecekan koneksi WiFi untuk $HOSTNAME dengan modem $MODEM_NAME...${RESET}" | tee -a "$LOGFILE"
+echo -e "${BLUE}$(date) - Cek koneksi WiFi untuk $HOSTNAME modem $MODEM_NAME...${RESET}" | tee -a "$LOGFILE"
 
 while true; do
     # Cek status koneksi WiFi
     if ! iw dev wlan0 link | grep -q "Connected"; then
-        echo -e "${BLUE}$(date) - Koneksi WiFi ke $MODEM_NAME terputus! Menjalankan AutoConnect.sh...${RESET}" | tee -a "$LOGFILE"
+        echo -e "${RED}$(date) - Koneksi WiFi ke $MODEM_NAME terputus! Menjalankan AutoConnect.sh...${RESET}" | tee -a "$LOGFILE"
         /home/hg680p/TmuxManager/AutoConnect.sh >> "$LOGFILE" 2>&1
+        echo -e "${GREEN}$(date) - AutoConnect.sh selesai dijalankan.${RESET}" | tee -a "$LOGFILE"
     else
-        echo -e "${BLUE}$(date) - Koneksi WiFi ke $MODEM_NAME stabil.${RESET}" | tee -a "$LOGFILE"
+        echo -e "${GREEN}$(date) - Koneksi WiFi ke $MODEM_NAME stabil.${RESET}" | tee -a "$LOGFILE"
     fi
 
     # Batasi log hanya 10 baris terakhir
