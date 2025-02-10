@@ -8,7 +8,7 @@ YELLOW='\033[1;33m'
 RESET='\033[0m'
 
 # File log
-LOGFILE="/home/hg680p/TmuxManager/AutoCheck.log"
+LOGFILE="/home/hg680p/TmuxManager/Check.log"
 
 # Daftar STB dan modem yang sesuai
 declare -A STB_MODEM=(
@@ -33,7 +33,7 @@ fi
 
 MODEM_NAME="${STB_MODEM[$HOSTNAME]}"
 
-echo -e "${YELLOW}$(date) - Monitoring koneksi WiFi STB: $HOSTNAME ke modem: $MODEM_NAME.${RESET}" | tee -a "$LOGFILE"
+echo -e "${YELLOW}$(date) - Monitoring WiFi STB: $HOSTNAME ke modem: $MODEM_NAME.${RESET}" | tee -a "$LOGFILE"
 
 LAST_STATUS="Unknown"
 
@@ -53,7 +53,7 @@ while true; do
 
     # Cek perubahan status untuk menghindari spam log
     if [[ "$WIFI_STATUS" == "Disconnected" && "$LAST_STATUS" != "Disconnected" ]]; then
-        echo -e "${RED}$(date) - Koneksi WiFi ke $MODEM_NAME terputus! Menjalankan AutoConnect.sh...${RESET}" | tee -a "$LOGFILE"
+        echo -e "${RED}$(date) - Koneksi WiFi ke $MODEM_NAME terputus! Run AutoConnect.sh...${RESET}" | tee -a "$LOGFILE"
         /home/hg680p/TmuxManager/AutoConnect.sh >> "$LOGFILE" 2>&1
         echo -e "${GREEN}$(date) - AutoConnect.sh selesai dijalankan.${RESET}" | tee -a "$LOGFILE"
     elif [[ "$WIFI_STATUS" != "Disconnected" && "$LAST_STATUS" == "Disconnected" ]]; then
