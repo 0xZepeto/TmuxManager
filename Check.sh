@@ -33,7 +33,7 @@ fi
 
 MODEM_NAME="${STB_MODEM[$HOSTNAME]}"
 
-echo -e "${YELLOW}$(date) - Memulai pengecekan koneksi WiFi untuk $HOSTNAME dengan modem $MODEM_NAME...${RESET}" | tee -a "$LOGFILE"
+echo -e "${YELLOW}$(date) - Cek koneksi WiFi $HOSTNAME modem $MODEM_NAME.${RESET}" | tee -a "$LOGFILE"
 
 while true; do
     # Cek status koneksi WiFi
