@@ -52,7 +52,6 @@ BOTS_NO_INPUT=(
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
     #❌<BOT ERROR>"MESHCHAIN:/home/hg680p/mesh-bot:node main.js:"
     #❌<BOT ERROR>"LITAS:/home/hg680p/litasBot:node main.js:"
-    #❌<BOT ERROR>"STREAM-Ai:/home/hg680p/streamAi:node main.js:"
 )
 
 # Daftar bot dengan input otomatis
