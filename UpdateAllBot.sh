@@ -78,9 +78,9 @@ BOTS=(
     "FUNCTOR:/home/hg680p/FunctorNode-BOT"
     "STREAM-Ai:/home/hg680p/StreamAi-BOT"
     "ASSISTER:/home/hg680p/Assisterr-BOT"
-    "KALEIDO:/home/hg680p/KaleidoFinance-Auto-Bot"
     "KITE-Ai:/home/hg680p/KiteAi-Auto-Bot"
     "SparkChain:/home/hg680p/Sparkchain-Auto-Bot"
+    "SINGULABS:/home/hg680p/Singulabs-Auto-Bot"
   # ❌ "PIPE:/home/hg680p/PIPE"
 )
 
