@@ -81,6 +81,7 @@ BOTS=(
     "SINGULABS:/home/hg680p/Singulabs-Auto-Bot"
     "NAORIS" "/home/hg680p/NaorisNode-BOT"
     "UNICH" "/home/hg680p/Unich-BOT"
+    "NodeGo:/home/hg680p/NodeGo-Auto-Bot"
   # ❌ "PIPE:/home/hg680p/PIPE"
 )
 
