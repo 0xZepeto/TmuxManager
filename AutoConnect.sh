@@ -1,67 +1,77 @@
 #!/bin/bash
 
-# Warna untuk output estetika
+# Warna untuk tampilan
 GREEN='\033[1;32m'
-BLUE='\033[1;34m'
 YELLOW='\033[1;33m'
 RED='\033[1;31m'
+BLUE='\033[1;34m'
 RESET='\033[0m'
 
-# Daftar STB dan modem yang sesuai
-declare -A STB_MODEMS=(
-    ["STB1"]="STB 1"
-    ["STB2"]="STB 2"
-    ["STB3"]="STB 3"
-    ["STB4"]="STB 4"
-    ["STB5"]="STB 5"
-    ["STB6"]="STB 6"
-    ["STB7"]="STB 7"
-    ["STB8"]="STB 8"
-)
+# Nama jaringan sesuai hostname STB
+HOSTNAME=$(hostname)
+WIFI_NAME="STB ${HOSTNAME//STB/}"  # Misal: STB1 -> "STB 1"
 
-# Interface WiFi
-WIFI_INTERFACE="wlan0"
-
-# Ping target
-PING_TARGET="8.8.8.8"
-
-# Path log
+# Lokasi log
 LOG_FILE="/home/hg680p/TmuxManager/wifi.log"
 
-# Ambil hostname STB
-HOSTNAME=$(hostname)
-CONNECTION_NAME=${STB_MODEMS[$HOSTNAME]}
+# Inisialisasi hitungan percobaan
+attempt=0
 
-# Jika STB tidak terdaftar, keluar
-if [[ -z "$CONNECTION_NAME" ]]; then
-    echo -e "${RED}$(date '+%Y-%m-%d %H:%M:%S') - STB tidak dikenali! Periksa hostname.${RESET}" | tee -a $LOG_FILE
-    exit 1
-fi
-
-# Fungsi cek apakah modem tersedia
-is_modem_available() {
-    nmcli device wifi list | grep -q "$CONNECTION_NAME"
+# Fungsi untuk menyambungkan kembali ke WiFi
+reconnect_wifi() {
+    echo -e "${YELLOW}Menyambungkan ulang ke $WIFI_NAME...${RESET}"
+    nmcli con down "$WIFI_NAME" && nmcli con up "$WIFI_NAME"
 }
 
-# Cek koneksi internet
-PING_RESULT=$(ping -c 3 -W 2 $PING_TARGET | awk -F'/' 'END { print ($5+0) }')
+# Loop utama
+while true; do
+    # Cek apakah terhubung ke WiFi yang sesuai
+    CURRENT_WIFI=$(nmcli -t -f NAME c show --active)
 
-# Jika modem tidak terdeteksi, jangan sambung ke jaringan lain
-if ! is_modem_available; then
-    echo -e "${RED}$(date '+%Y-%m-%d %H:%M:%S') - Modem $CONNECTION_NAME tidak ditemukan. Tidak menyambung ke jaringan lain.${RESET}" | tee -a $LOG_FILE
-    exit 1
-fi
+    if [[ "$CURRENT_WIFI" == "$WIFI_NAME" ]]; then
+        # Cek ping ke gateway
+        GATEWAY_IP=$(ip route | awk '/default/ {print $3}')
+        if [[ -n "$GATEWAY_IP" ]]; then
+            ping_result=$(ping -c 1 -W 1 "$GATEWAY_IP" | awk -F'/' 'END {print $5+0}')
 
-# Perbaikan: Bandingkan nilai ping dengan 500 menggunakan `bc`
-if [[ -z "$PING_RESULT" || $(echo "$PING_RESULT >= 500" | bc -l) -eq 1 ]]; then
-    echo -e "${YELLOW}$(date '+%Y-%m-%d %H:%M:%S') - Ping tinggi (${PING_RESULT}ms) atau koneksi terputus! Reconnecting ke $CONNECTION_NAME...${RESET}" | tee -a $LOG_FILE
-    nmcli device disconnect $WIFI_INTERFACE
+            # Jika ping di bawah 500ms, koneksi stabil
+            if [[ "$ping_result" -lt 500 ]]; then
+                echo -e "${GREEN}$(date '+%Y-%m-%d %H:%M:%S') - Koneksi stabil dengan ping ${ping_result}ms.${RESET}"
+                echo "$(date '+%Y-%m-%d %H:%M:%S') - Koneksi stabil dengan ping ${ping_result}ms." >> "$LOG_FILE"
+                attempt=0  # Reset percobaan
+            else
+                # Ping tinggi, coba reconnect
+                ((attempt++))
+                echo -e "${RED}$(date '+%Y-%m-%d %H:%M:%S') - Ping tinggi (${ping_result}ms). Percobaan ke-$attempt...${RESET}"
+                echo "$(date '+%Y-%m-%d %H:%M:%S') - Ping tinggi (${ping_result}ms). Percobaan ke-$attempt..." >> "$LOG_FILE"
+                reconnect_wifi
+            fi
+        else
+            # Tidak bisa mendapatkan gateway, coba reconnect
+            ((attempt++))
+            echo -e "${RED}$(date '+%Y-%m-%d %H:%M:%S') - Tidak dapat menemukan gateway. Percobaan ke-$attempt...${RESET}"
+            echo "$(date '+%Y-%m-%d %H:%M:%S') - Tidak dapat menemukan gateway. Percobaan ke-$attempt..." >> "$LOG_FILE"
+            reconnect_wifi
+        fi
+    else
+        # Tidak terhubung ke jaringan yang sesuai, coba reconnect
+        ((attempt++))
+        echo -e "${RED}$(date '+%Y-%m-%d %H:%M:%S') - Tidak terhubung ke $WIFI_NAME. Percobaan ke-$attempt...${RESET}"
+        echo "$(date '+%Y-%m-%d %H:%M:%S') - Tidak terhubung ke $WIFI_NAME. Percobaan ke-$attempt..." >> "$LOG_FILE"
+        reconnect_wifi
+    fi
+
+    # Jika gagal 5 kali, tunggu 15 detik sebelum mencoba lagi
+    if [[ "$attempt" -ge 5 ]]; then
+        echo -e "${YELLOW}$(date '+%Y-%m-%d %H:%M:%S') - Gagal menyambung 5 kali. Menunggu 15 detik sebelum mencoba lagi...${RESET}"
+        echo "$(date '+%Y-%m-%d %H:%M:%S') - Gagal menyambung 5 kali. Menunggu 15 detik sebelum mencoba lagi..." >> "$LOG_FILE"
+        sleep 15
+        attempt=0  # Reset hitungan percobaan
+    fi
+
+    # Simpan hanya 10 log terakhir
+    tail -n 10 "$LOG_FILE" > "${LOG_FILE}.tmp" && mv "${LOG_FILE}.tmp" "$LOG_FILE"
+
+    # Tunggu sebelum loop berikutnya
     sleep 2
-    nmcli connection up "$CONNECTION_NAME"
-    echo -e "${GREEN}$(date '+%Y-%m-%d %H:%M:%S') - Koneksi ke $CONNECTION_NAME diperbarui!${RESET}" | tee -a $LOG_FILE
-else
-    echo -e "${BLUE}$(date '+%Y-%m-%d %H:%M:%S') - Koneksi stabil dengan ping ${PING_RESULT}ms.${RESET}" | tee -a $LOG_FILE
-fi
-
-# Batasi log hanya 5 entri terakhir
-tail -n 5 $LOG_FILE > /tmp/wifi_log.tmp && mv /tmp/wifi_log.tmp $LOG_FILE
+done
