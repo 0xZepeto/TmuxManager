@@ -35,8 +35,8 @@ fi
 MODEM_NAME="${STB_MODEM[$HOSTNAME]}"
 
 # Tampilkan pesan monitoring hanya di terminal
-echo -e "${YELLOW}$(date) - Monitoring WiFi $HOSTNAME ke modem: $MODEM_NAME.${RESET}"
-echo -e "$(date) - Monitoring WiFi STB: $HOSTNAME ke modem: $MODEM_NAME." >> "$LOGFILE"
+echo -e "${YELLOW}$(date) - Monitoring WiFi: $HOSTNAME ke modem: $MODEM_NAME.${RESET}"
+echo -e "$(date) - Monitoring WiFi: $HOSTNAME ke modem: $MODEM_NAME." >> "$LOGFILE"
 
 LAST_STATUS="Unknown"
 
