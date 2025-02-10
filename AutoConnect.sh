@@ -57,7 +57,7 @@ while true; do
         fi
         sleep 5
     else
-        log "${RED}WiFi benar-benar disconnected! Mencoba menyambungkan ulang...${RESET}"
+        log "${RED}WiFi Terputus! Mencoba menyambungkan...${RESET}"
 
         # Coba menyambungkan kembali
         nmcli connection down "$WIFI_NAME" 2>/dev/null
