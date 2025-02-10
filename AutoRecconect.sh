@@ -19,7 +19,7 @@ WIFI_INTERFACE="wlan0"
 PING_TARGET="8.8.8.8"
 
 # Path log
-LOG_FILE="/home/hg680p/TmuxManager/wifilog.log"
+LOG_FILE="/home/hg680p/TmuxManager/wifi.log"
 
 # Ambil hostname STB
 HOSTNAME=$(hostname)
