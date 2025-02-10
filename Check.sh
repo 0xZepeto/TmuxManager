@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Ambil hostname STB
-STB_HOSTNAME=$(hostname)
+# Warna
+BLUE='\033[1;34m'
+RESET='\033[0m'
+
+# File log
+LOGFILE="/home/hg680p/TmuxManager/AutoCheck.log"
 
 # Daftar STB dan modem yang sesuai
 declare -A STB_MODEM=(
@@ -15,26 +19,30 @@ declare -A STB_MODEM=(
     ["STB8"]="STB 8"
 )
 
-# Pastikan hostname STB ada dalam daftar
-if [[ -z "${STB_MODEM[$STB_HOSTNAME]}" ]]; then
-    echo "STB ini tidak terdaftar dalam AutoCheck. Keluar..."
+# Ambil hostname STB saat ini
+HOSTNAME=$(hostname)
+
+# Cek apakah hostname ada dalam daftar STB_MODEM
+if [[ -z "${STB_MODEM[$HOSTNAME]}" ]]; then
+    echo -e "${BLUE}$(date) - Hostname tidak ditemukan dalam daftar STB. Keluar...${RESET}" | tee -a "$LOGFILE"
     exit 1
 fi
 
-WIFI_NAME="${STB_MODEM[$STB_HOSTNAME]}"
-AUTOCONNECT_SCRIPT="/home/hg680p/TmuxManager/AutoConnect.sh"
+MODEM_NAME="${STB_MODEM[$HOSTNAME]}"
 
-echo "$(date +'%Y-%m-%d %H:%M:%S') - Memulai pemantauan WiFi untuk $STB_HOSTNAME ($WIFI_NAME)..."
+echo -e "${BLUE}$(date) - Memulai pengecekan koneksi WiFi untuk $HOSTNAME dengan modem $MODEM_NAME...${RESET}" | tee -a "$LOGFILE"
 
-# Loop pengecekan setiap 10 menit
 while true; do
-    # Cek apakah wlan0 memiliki koneksi
-    if ! nmcli device status | grep -q "wlan0.*connected"; then
-        echo "$(date +'%Y-%m-%d %H:%M:%S') - WiFi $WIFI_NAME terputus! Menjalankan AutoConnect.sh..."
-        bash "$AUTOCONNECT_SCRIPT"
+    # Cek status koneksi WiFi
+    if ! iw dev wlan0 link | grep -q "Connected"; then
+        echo -e "${BLUE}$(date) - Koneksi WiFi ke $MODEM_NAME terputus! Menjalankan AutoConnect.sh...${RESET}" | tee -a "$LOGFILE"
+        /home/hg680p/TmuxManager/AutoConnect.sh >> "$LOGFILE" 2>&1
     else
-        echo "$(date +'%Y-%m-%d %H:%M:%S') - WiFi $WIFI_NAME stabil, lanjut memantau..."
+        echo -e "${BLUE}$(date) - Koneksi WiFi ke $MODEM_NAME stabil.${RESET}" | tee -a "$LOGFILE"
     fi
+
+    # Batasi log hanya 10 baris terakhir
+    tail -n 10 "$LOGFILE" > "${LOGFILE}.tmp" && mv "${LOGFILE}.tmp" "$LOGFILE"
 
     # Tunggu 10 menit sebelum pengecekan berikutnya
     sleep 600
