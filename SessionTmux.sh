@@ -48,7 +48,6 @@ BOTS_NO_INPUT=(
 
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
     #❌"OpenLedger:/home/hg680p/opledBot:node main.js:"
-    #❌"NAORIS:/home/hg680p/Naoris-BOT:node main.js:"
     #❌<BOT ERROR>"LISK:/home/hg680p/liskPortsl:node main.js:"
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
     #❌<BOT ERROR>"MESHCHAIN:/home/hg680p/mesh-bot:node main.js:"
@@ -142,6 +141,9 @@ start_bot_with_venv "AiGaea" "/home/hg680p/AiGaea-BOT" "python3 bot.py" "/home/h
 
 # Menjalankan ASSISTER dengan virtual environment
 start_bot_with_venv "ASSISTER" "/home/hg680p/Assisterr-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+
+start_bot_with_venv "NAORIS" "/home/hg680p/NaorisNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+start_bot_with_venv "UNICH" "/home/hg680p/Unich-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
 # Menjalankan PIPE dengan virtual environment
 #<error❌>start_bot_with_venv "PIPE" "/home/hg680p/PIPE" "python3 bot.py" "/home/hg680p/venv/bin/activate"
