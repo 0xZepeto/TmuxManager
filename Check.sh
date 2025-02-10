@@ -4,10 +4,11 @@
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 BLUE='\033[1;34m'
+YELLOW='\033[1;33m'
 RESET='\033[0m'
 
 # File log
-LOGFILE="/home/hg680p/TmuxManager/Check.log"
+LOGFILE="/home/hg680p/TmuxManager/AutoCheck.log"
 
 # Daftar STB dan modem yang sesuai
 declare -A STB_MODEM=(
@@ -32,7 +33,7 @@ fi
 
 MODEM_NAME="${STB_MODEM[$HOSTNAME]}"
 
-echo -e "${BLUE}$(date) - Cek koneksi WiFi untuk $HOSTNAME modem $MODEM_NAME...${RESET}" | tee -a "$LOGFILE"
+echo -e "${YELLOW}$(date) - Memulai pengecekan koneksi WiFi untuk $HOSTNAME dengan modem $MODEM_NAME...${RESET}" | tee -a "$LOGFILE"
 
 while true; do
     # Cek status koneksi WiFi
