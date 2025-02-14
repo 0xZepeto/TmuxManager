@@ -143,7 +143,8 @@ start_bot_with_venv "ASSISTER" "/home/hg680p/Assisterr-BOT" "python3 bot.py" "/h
 
 start_bot_with_venv "NAORIS" "/home/hg680p/NaorisNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "UNICH" "/home/hg680p/Unich-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-start_bot_with_venv "LISK: "/home/hg680p/liskportal" "python3 main.py" "/home/hg680p/venv/bin/activate"
+start_bot_with_venv "LISK" "/home/hg680p/liskportal" "python3 main.py" "/home/hg680p/venv/bin/activate"
+
 # Menjalankan PIPE dengan virtual environment
 #<error❌>start_bot_with_venv "PIPE" "/home/hg680p/PIPE" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
