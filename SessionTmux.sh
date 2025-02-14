@@ -45,11 +45,11 @@ BOTS_NO_INPUT=(
     "SparkChain:/home/hg680p/Sparkchain-Auto-Bot:node index.js:"
     "SINGULABS:/home/hg680p/Singulabs-Auto-Bot:node index.js:"
     "NodeGo:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
+    "FRACTION-Ai:/home/hg680p/FractionAI-BOT:node main.js:"
     #STB8"LAYEREDGE_17k:/home/hg680p/LedgeBot:node mainRef.js:"
 
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
     #❌"OpenLedger:/home/hg680p/opledBot:node main.js:"
-    #❌<BOT ERROR>"LISK:/home/hg680p/liskPortsl:node main.js:"
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
     #❌<BOT ERROR>"MESHCHAIN:/home/hg680p/mesh-bot:node main.js:"
     #❌<BOT ERROR>"LITAS:/home/hg680p/litasBot:node main.js:"
@@ -143,7 +143,7 @@ start_bot_with_venv "ASSISTER" "/home/hg680p/Assisterr-BOT" "python3 bot.py" "/h
 
 start_bot_with_venv "NAORIS" "/home/hg680p/NaorisNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "UNICH" "/home/hg680p/Unich-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-
+start_bot_with_venv "LISK: "/home/hg680p/liskportal" "python3 main.py" "/home/hg680p/venv/bin/activate"
 # Menjalankan PIPE dengan virtual environment
 #<error❌>start_bot_with_venv "PIPE" "/home/hg680p/PIPE" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
