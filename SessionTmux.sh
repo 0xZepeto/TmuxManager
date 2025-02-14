@@ -45,7 +45,7 @@ BOTS_NO_INPUT=(
     "SparkChain:/home/hg680p/Sparkchain-Auto-Bot:node index.js:"
     "SINGULABS:/home/hg680p/Singulabs-Auto-Bot:node index.js:"
     "NodeGo:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
-    "FRACTION-Ai:/home/hg680p/FractionAI-BOT:node main.js:"
+    "FRACTION-Ai:/home/hg680p/FractionAI-BOT:npm start:"
     #STB8"LAYEREDGE_17k:/home/hg680p/LedgeBot:node mainRef.js:"
 
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
