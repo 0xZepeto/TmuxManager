@@ -166,17 +166,16 @@ else
     echo -e "${BLUE}KITE-AI sudah berjalan.${RESET}"
 fi
 
-# Jalankan TEA-TARIK dengan menjalankan node index.js lalu enter, kemudian kirim input "y", "2", dan "100"
+# Jalankan TEA-TARIK dengan input otomatis
 start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
-sleep 1
-tmux send-keys -t "TEA-TARIK" C-m  # Tekan Enter setelah menjalankan node index.js
-sleep 1
+sleep 3
 tmux send-keys -t "TEA-TARIK" "y" C-m  # Kirim input "y"
-sleep 1
+sleep 3
 tmux send-keys -t "TEA-TARIK" "2" C-m  # Kirim input "2"
-sleep 1
+sleep 3
 tmux send-keys -t "TEA-TARIK" "100" C-m  # Kirim input "100"
-echo -e "${GREEN}TEA-TARIK sudah dijalankan dengan input otomatis: Enter, y, 2, dan 100.${RESET}"
+echo -e "${GREEN}TEA-TARIK sudah dijalankan dengan input otomatis: y, 2, dan 100 dengan jeda 3 detik.${RESET}"
+
 # Pesan penutupan dengan animasi loading
 echo -ne "${YELLOW}⚡ Memastikan semua bot berjalan dengan baik...${RESET}"
 sleep 2
