@@ -34,7 +34,6 @@ echo ""
 # Daftar bot tanpa input otomatis
 BOTS_NO_INPUT=(
     "DEPINED:/home/hg680p/Depined-BOT:node main.js:"
-    "GRASS:/home/hg680p/grass-network-bot:node index.js:Down C-m"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
     "DESPEED:/home/hg680p/despeedBot:npm run start:"
@@ -50,6 +49,7 @@ BOTS_NO_INPUT=(
 
 
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
+    #"GRASS:/home/hg680p/grass-network-bot:node index.js:Down C-m"
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
     #❌<BOT ERROR>"MESHCHAIN:/home/hg680p/mesh-bot:node main.js:"
     #❌<BOT ERROR>"LITAS:/home/hg680p/litasBot:node main.js:"
