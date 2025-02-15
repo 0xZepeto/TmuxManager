@@ -61,14 +61,24 @@ echo -e "${YELLOW}[INFO] Mengaktifkan kembali layanan logging..." | tee -a "$LOG
 sudo systemctl restart rsyslog
 sudo systemctl restart systemd-journald
 
-# 8. Menampilkan status setelah pembersihan
+# 8. Hapus log PM2 yang besar
+echo -e "${YELLOW}[INFO] Menghapus log PM2 yang besar..." | tee -a "$LOG_FILE"
+sudo truncate -s 0 /home/hg680p/.pm2/pm2.log
+sudo rm -rf /home/hg680p/.pm2/logs/*
+
+# 9. Batasi ukuran log PM2 agar tidak membesar
+echo -e "${YELLOW}[INFO] Mengatur batas ukuran log PM2 ke 100MB..." | tee -a "$LOG_FILE"
+pm2 set pm2:log max_size 100M
+pm2 reloadLogs
+
+# 10. Hapus log PM2 tanpa mengganggu sesi
+echo -e "${YELLOW}[INFO] Menghapus log PM2 tanpa mengganggu sesi..." | tee -a "$LOG_FILE"
+pm2 flush
+
+# 11. Menampilkan status setelah pembersihan
 echo -e "${GREEN}====================================" | tee -a "$LOG_FILE"
 echo -e "${YELLOW}Pembersihan & Optimasi Selesai!" | tee -a "$LOG_FILE"
 echo -e "${GREEN}====================================" | tee -a "$LOG_FILE"
 
 df -h | tee -a "$LOG_FILE"
 free -h | tee -a "$LOG_FILE"
-uptime | tee -a "$LOG_FILE"
-
-# Footer
-echo -e "${GREEN}====================================" | tee -a "$LOG_FILE"
