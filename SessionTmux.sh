@@ -45,10 +45,11 @@ BOTS_NO_INPUT=(
     "SINGULABS:/home/hg680p/Singulabs-Auto-Bot:node index.js:"
     "NodeGo:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
     "FRACTION-Ai:/home/hg680p/FractionAI-BOT:npm start:"
+    "OpenLedger:/home/hg680p/opledBot:node main.js:"
     #STB8"LAYEREDGE_17k:/home/hg680p/LedgeBot:node mainRef.js:"
 
+
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
-    #❌"OpenLedger:/home/hg680p/opledBot:node main.js:"
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
     #❌<BOT ERROR>"MESHCHAIN:/home/hg680p/mesh-bot:node main.js:"
     #❌<BOT ERROR>"LITAS:/home/hg680p/litasBot:node main.js:"
@@ -122,7 +123,7 @@ start_bot_with_venv() {
 # Menjalankan DAWN dengan virtual environment
 start_bot_with_venv "DAWN" "/home/hg680p/Dawn-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
-# Menjalankan DEPINED dengan virtual environment
+# STB-6-7-8 Menjalankan DEPINED dengan virtual environment
 start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
 # Menjalankan MULTIPLE dengan virtual environment
