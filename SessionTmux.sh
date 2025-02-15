@@ -39,7 +39,7 @@ BOTS_NO_INPUT=(
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
     "DESPEED:/home/hg680p/despeedBot:npm run start:"
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
-    "OASIS-Ai:/home/hg680p/oasis-bot:node main.js:"
+    "OASIS-Ai:/home/hg680p/Oasis:node main.js:"
     "CAPFIZZ:/home/hg680p/Capfizz-BOT:node main.js:"
     "SparkChain:/home/hg680p/Sparkchain-Auto-Bot:node index.js:"
     "SINGULABS:/home/hg680p/Singulabs-Auto-Bot:node index.js:"
