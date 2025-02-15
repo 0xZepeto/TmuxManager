@@ -37,7 +37,6 @@ BOTS_NO_INPUT=(
     "GRASS:/home/hg680p/grass-network-bot:node index.js:Down C-m"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
-    "TEAFI:/home/hg680p/teaFiBot:node main.js:"
     "DESPEED:/home/hg680p/despeedBot:npm run start:"
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/oasis-bot:node main.js:"
@@ -167,6 +166,17 @@ else
     echo -e "${BLUE}KITE-AI sudah berjalan.${RESET}"
 fi
 
+# Jalankan TEA-TARIK dengan menjalankan node index.js lalu enter, kemudian kirim input "y", "2", dan "100"
+start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
+sleep 1
+tmux send-keys -t "TEA-TARIK" C-m  # Tekan Enter setelah menjalankan node index.js
+sleep 1
+tmux send-keys -t "TEA-TARIK" "y" C-m  # Kirim input "y"
+sleep 1
+tmux send-keys -t "TEA-TARIK" "2" C-m  # Kirim input "2"
+sleep 1
+tmux send-keys -t "TEA-TARIK" "100" C-m  # Kirim input "100"
+echo -e "${GREEN}TEA-TARIK sudah dijalankan dengan input otomatis: Enter, y, 2, dan 100.${RESET}"
 # Pesan penutupan dengan animasi loading
 echo -ne "${YELLOW}⚡ Memastikan semua bot berjalan dengan baik...${RESET}"
 sleep 2
