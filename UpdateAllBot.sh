@@ -55,15 +55,15 @@ print_centered "MEMULAI UPDATE SEMUA BOT..."
 
 # Daftar bot yang akan diperbarui
 BOTS=(
-    "NGARIT:/home/hg680p/NGARIT"
+    #"NGARIT:/home/hg680p/NGARIT"
     "DEPINED:/home/hg680p/Depined-BOT"
     "DEPINED:/home/hg680p/depinedBot"
     "MYGATE:/home/hg680p/mygateBot"
     "MEOWTOPIA:/home/hg680p/meowBot"
-    "TEAFI:/home/hg680p/teaFiBot"
+    #"TEAFI:/home/hg680p/teaFiBot"
     "DESPEED:/home/hg680p/despeedBot"
     "LAYEREDGE:/home/hg680p/LayerEdge-BOT"
-    "OASIS-Ai:/home/hg680p/oasis-bot"
+    "OASIS-Ai:/home/hg680p/Oasis"
     #"LISK:/home/hg680p/liskPortsl"
     #"TAKER:/home/hg680p/takerBot"
     #"MESHCHAIN:/home/hg680p/mesh-bot"
@@ -82,6 +82,7 @@ BOTS=(
     "NAORIS" "/home/hg680p/NaorisNode-BOT"
     "UNICH" "/home/hg680p/Unich-BOT"
     "NodeGo:/home/hg680p/NodeGo-Auto-Bot"
+    "FRACTION-AI:/home/hg680p/FractionAI-BOT"
   # ❌ "PIPE:/home/hg680p/PIPE"
 )
 
