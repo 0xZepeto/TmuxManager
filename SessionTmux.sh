@@ -172,7 +172,7 @@ start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
 sleep 3
 tmux send-keys -t "TEA-TARIK" "y" C-m  # Kirim input "y"
 sleep 3
-tmux send-keys -t "TEA-TARIK" "2" C-m  # Kirim input "2"
+tmux send-keys -t "TEA-TARIK" "5" C-m  # Kirim input "5"
 sleep 3
 tmux send-keys -t "TEA-TARIK" "100" C-m  # Kirim input "100"
 echo -e "${GREEN}TEA-TARIK sudah dijalankan dengan input otomatis: y, 2, dan 100 dengan jeda 3 detik.${RESET}"
