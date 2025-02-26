@@ -155,17 +155,11 @@ for BOT in "${BOTS_WITH_INPUT[@]}"; do
 done
 
 #kite
-if ! tmux has-session -t "KITE-AI" 2>/dev/null; then
-    tmux new-session -d -s "KITE-AI" "bash -c 'cd /home/hg680p/KiteAi-Auto-Bot && node index.js'"
-    echo -e "${YELLOW}Menjalankan KITE-AI...${RESET}"
-    sleep 2
-    tmux send-keys -t "KITE-AI" "1" C-m
-    sleep 1
-    tmux send-keys -t "KITE-AI" "2" C-m
-    echo -e "${GREEN}KITE-AI dijalankan dengan input otomatis: 1 dan 2.${RESET}"
-else
-    echo -e "${BLUE}KITE-AI sudah berjalan.${RESET}"
-fi
+# Jalankan Kite-Ai dengan input otomatis Enter setelah 2 detik
+start_bot "KITE-Ai" "/home/hg680p/KiteAi-Auto-Bot" "node index.js"
+sleep 2
+tmux send-keys -t "KITE-AI" "" C-m
+echo -e "${GREEN}Enter telah dikirim ke KITE-AI.${RESET}"
 
 # Jalankan TEA-TARIK dengan input otomatis
 start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
