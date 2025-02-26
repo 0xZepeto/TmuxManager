@@ -158,8 +158,8 @@ done
 # Jalankan Kite-Ai dengan input otomatis Enter setelah 2 detik
 start_bot "KITE-Ai" "/home/hg680p/KiteAi-Auto-Bot" "node index.js"
 sleep 2
-tmux send-keys -t "KITE-AI" "" C-m
-echo -e "${GREEN}Enter telah dikirim ke KITE-AI.${RESET}"
+tmux send-keys -t "KITE-Ai" "" C-m
+echo -e "${GREEN}Enter telah dikirim ke KITE-Ai.${RESET}"
 
 # Jalankan TEA-TARIK dengan input otomatis
 start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
