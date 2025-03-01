@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# Simpan perubahan lokal sebelum menarik update
-git stash
+# Warna kuning untuk output
+YELLOW='\033[1;33m'
+RESET='\033[0m'
 
-# Tarik update terbaru dari repo
-git pull
+# Folder target
+FOLDER="/home/hg680p/TmuxManager"
 
-# Kembalikan perubahan lokal yang sebelumnya disimpan
-git stash pop
+# Pindah ke folder TmuxManager
+cd "$FOLDER" || exit
 
-# Berikan izin eksekusi ke semua file .sh
-find . -type f -name "*.sh" -exec chmod +x {} \;
+# Jalankan git stash dan git pull tanpa output yang mengganggu
+git stash -q 2>/dev/null
+git pull --quiet 2>/dev/null
 
-echo "Update selesai! Semua file .sh telah diberikan izin eksekusi."
+# Berikan izin eksekusi ke semua file .sh hanya dalam folder ini (bukan subfolder)
+chmod +x "$FOLDER"/*.sh 2>/dev/null
+
+# Pesan selesaiSuccessful
+echo -e "${YELLOW}Update Successful!${RESET}"
