@@ -118,9 +118,6 @@ start_bot_with_venv() {
     fi
 }
 
-# Menjalankan DAWN dengan virtual environment
-#❌start_bot_with_venv "DAWN" "/home/hg680p/Dawn-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-
 # STB-6-7-8 Menjalankan DEPINED dengan virtual environment
 start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
@@ -133,18 +130,18 @@ start_bot_with_venv "FUNCTOR" "/home/hg680p/FunctorNode-BOT" "python3 bot.py" "/
 # Menjalankan MULTIPLE dengan virtual environment
 start_bot_with_venv "STREAM-Ai" "/home/hg680p/StreamAi-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
-# Menjalankan AIGAEA dengan virtual environment
-start_bot_with_venv "AiGaea" "/home/hg680p/AiGaea-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-
 # Menjalankan ASSISTER dengan virtual environment
 start_bot_with_venv "ASSISTER" "/home/hg680p/Assisterr-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
 start_bot_with_venv "NAORIS" "/home/hg680p/NaorisNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-start_bot_with_venv "UNICH" "/home/hg680p/Unich-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+#❌start_bot_with_venv "UNICH" "/home/hg680p/Unich-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 #❌STB1 start_bot_with_venv "LISK" "/home/hg680p/liskportal" "python3 main.py" "/home/hg680p/venv/bin/activate"
-
+# Menjalankan AIGAEA dengan virtual environment
+#❌start_bot_with_venv "AiGaea" "/home/hg680p/AiGaea-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 # Menjalankan PIPE dengan virtual environment
 #<error❌>start_bot_with_venv "PIPE" "/home/hg680p/PIPE" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+# Menjalankan DAWN dengan virtual environment
+#❌start_bot_with_venv "DAWN" "/home/hg680p/Dawn-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
 # Loop untuk menjalankan bot dengan input otomatis
 for BOT in "${BOTS_WITH_INPUT[@]}"; do
