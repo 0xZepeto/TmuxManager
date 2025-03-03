@@ -56,7 +56,7 @@ BOTS_NO_INPUT=(
 # Daftar bot dengan input otomatis
 BOTS_WITH_INPUT=(
     "BLESS:/home/hg680p/bless-bot:node main.js:n"
-    "TENEO:/home/hg680p/teneo-bot:node index.js:n y"
+    "TENEO:/home/hg680p/teneo-bot:node index.js:y n y"
 )
 
 # Fungsi untuk menjalankan bot dalam tmux dengan efek loading
