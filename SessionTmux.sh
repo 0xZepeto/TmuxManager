@@ -40,12 +40,14 @@ BOTS_NO_INPUT=(
     "OASIS-Ai:/home/hg680p/Oasis:node main.js:"
     "FRACTION-Ai:/home/hg680p/FractionAI-BOT:npm start:"
     "OpenLedger:/home/hg680p/opledBot:node main.js:"
+    "NodeGo:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
+    "STORK:/home/hg680p/Stork-Auto-Bot:node index.js:"
+    "3DOS:/home/hg680p/3Dos-Auto-Bot:node index.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LedgeBot:node mainRef.js:"
     #❌"DESPEED:/home/hg680p/despeedBot:npm run start:"
     #❌"CAPFIZZ:/home/hg680p/Capfizz-BOT:node main.js:"
     #❌"SparkChain:/home/hg680p/Sparkchain-Auto-Bot:node index.js:"
     #❌"SINGULABS:/home/hg680p/Singulabs-Auto-Bot:node index.js:"
-    #❌"NodeGo:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
     #❌"NGARIT:/home/hg680p/NGARIT:node index.js:"
     #❌"GRASS:/home/hg680p/grass-network-bot:node index.js:Down C-m"
     #❌<BOT ERROR>"TAKER:/home/hg680p/takerBot:node main.js:"
@@ -56,7 +58,7 @@ BOTS_NO_INPUT=(
 # Daftar bot dengan input otomatis
 BOTS_WITH_INPUT=(
     "BLESS:/home/hg680p/bless-bot:node main.js:n"
-    "TENEO:/home/hg680p/teneo-bot:node index.js:y n y"
+    #"TENEO:/home/hg680p/teneo-bot:node index.js:y n y"
 )
 
 # Fungsi untuk menjalankan bot dalam tmux dengan efek loading
@@ -117,6 +119,8 @@ start_bot_with_venv() {
         echo -e "${GREEN}✓ Input otomatis '3' dikirim ke $SESSION.${RESET}"
     fi
 }
+
+start_bot_with_venv "TENEO" "/home/hg680p/Teneo-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
 # STB-6-7-8 Menjalankan DEPINED dengan virtual environment
 start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
