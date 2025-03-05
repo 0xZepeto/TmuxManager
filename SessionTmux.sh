@@ -46,7 +46,7 @@ BOTS_NO_INPUT=(
     "WALME:/home/hg680p/Walme-Auto-Bot:node index.js:"
     "FireVerse:/home/hg680p/Fireverse-Auto-Bot:node index.js:"
     "GATA:/home/hg680p/Gata-Auto-Bot:node index.js:"
-    #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node mainRef.js:"
+    #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     #❌"DESPEED:/home/hg680p/despeedBot:npm run start:"
     #❌"CAPFIZZ:/home/hg680p/Capfizz-BOT:node main.js:"
     #❌"SparkChain:/home/hg680p/Sparkchain-Auto-Bot:node index.js:"
@@ -140,7 +140,7 @@ start_bot_with_venv "STREAM-Ai" "/home/hg680p/StreamAi-BOT" "python3 bot.py" "/h
 # Menjalankan ASSISTER dengan virtual environment
 start_bot_with_venv "ASSISTER" "/home/hg680p/Assisterr-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
-start_bot_with_venv "NAORIS" "/home/hg680p/NaorisNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+#❌start_bot_with_venv "NAORIS" "/home/hg680p/NaorisNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 #❌start_bot_with_venv "UNICH" "/home/hg680p/Unich-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 #❌STB1 start_bot_with_venv "LISK" "/home/hg680p/liskportal" "python3 main.py" "/home/hg680p/venv/bin/activate"
 # Menjalankan AIGAEA dengan virtual environment
