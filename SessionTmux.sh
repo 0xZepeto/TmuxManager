@@ -124,7 +124,8 @@ start_bot_with_venv() {
 }
 
 start_bot_with_venv "TENEO" "/home/hg680p/Teneo-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-
+start_bot_with_venv "KIVA" "/home/hg680p/Kivanet-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+start_bot_with_venv "CAPFIZ" "/home/hg680p/Capfizz-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 # STB-6-7-8 Menjalankan DEPINED dengan virtual environment
 start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
