@@ -39,8 +39,6 @@ BOTS_NO_INPUT=(
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/Oasis:node main.js:"
     "FRACTION-Ai:/home/hg680p/FractionAI-BOT:npm start:"
-    #"NODEGO:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
-    #"STORK:/home/hg680p/Stork-Auto-Bot:node index.js:"
     "WALME:/home/hg680p/Walme-Auto-Bot:node index.js:"
     "FireVerse:/home/hg680p/Fireverse-Auto-Bot:node index.js:"
     "AGNTHUB:/home/hg680p/Agent:node agnt.js:"
@@ -52,6 +50,10 @@ BOTS_NO_INPUT=(
 
 
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
+    #"NODEGO:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
+    #"STORK:/home/hg680p/Stork-Auto-Bot:node index.js:"
+
+   
     #❌"3DOS:/home/hg680p/3Dos-Auto-Bot:node index.js:"
     #❌"GATA:/home/hg680p/Gata-Auto-Bot:node index.js:"
     #❌"OpenLedger:/home/hg680p/opledBot:node main.js:"
@@ -131,7 +133,7 @@ start_bot_with_venv() {
     fi
 }
 
-start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamQuest-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamQuests-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "TENEO" "/home/hg680p/Teneo-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "KIVA" "/home/hg680p/Kivanet-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "CAPFIZ" "/home/hg680p/Capfizz-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
