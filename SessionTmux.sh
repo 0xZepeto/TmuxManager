@@ -133,7 +133,7 @@ start_bot_with_venv() {
     fi
 }
 
-start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamQuests-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamerQuests-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "TENEO" "/home/hg680p/Teneo-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "KIVA" "/home/hg680p/Kivanet-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "CAPFIZ" "/home/hg680p/Capfizz-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
