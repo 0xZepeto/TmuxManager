@@ -47,6 +47,7 @@ BOTS_NO_INPUT=(
     "HACKQUEST:/home/hg680p/Agent:node hq.js:"
     "COC:/home/hg680p/Agent:node cocnew.js:"
     "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
+    "ZOOP:/home/hg680p/Agent:node zoop.js:"
 
 
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
