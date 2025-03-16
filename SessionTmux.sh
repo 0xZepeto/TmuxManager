@@ -46,7 +46,7 @@ BOTS_NO_INPUT=(
     "MELOD-AI:/home/hg680p/Agent:node melodai.js:"
     "HACKQUEST:/home/hg680p/Agent:node hq.js:"
     "COC:/home/hg680p/Agent:node cocnew.js:"
-    #"DAWN:/home/hg680p/Dawn:node index.js:"
+    "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
 
 
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
