@@ -45,11 +45,12 @@ BOTS_NO_INPUT=(
     "SOGNI:/home/hg680p/Agent:node dailysogni.js:"
     "MELOD-AI:/home/hg680p/Agent:node melodai.js:"
     "HACKQUEST:/home/hg680p/Agent:node hq.js:"
-    "COC:/home/hg680p/Agent:node cocnew.js:"
     "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
     "ZOOP:/home/hg680p/Agent:node zoop.js:"
 
 
+    
+    #STB1"COC:/home/hg680p/Agent:node cocnew.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     #"NODEGO:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
     #"STORK:/home/hg680p/Stork-Auto-Bot:node index.js:"
