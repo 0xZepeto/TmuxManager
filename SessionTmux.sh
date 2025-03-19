@@ -45,13 +45,13 @@ BOTS_NO_INPUT=(
     "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
     "ZOOP:/home/hg680p/Agent:node zoop.js:"
     "EXEOS:/home/hg680p/Exeos-Auto-Bot:node index.js:"
+    #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
 
 
     #"MYGATE:/home/hg680p/mygateBot:node main.js:"
     #"AGNTHUB:/home/hg680p/Agent:node agnt.js:"
     #"SOGNI:/home/hg680p/Agent:node dailysogni.js:"
     #STB1"COC:/home/hg680p/Agent:node cocnew.js:"
-    #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     #"NODEGO:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
     #"STORK:/home/hg680p/Stork-Auto-Bot:node index.js:"
 
@@ -72,7 +72,7 @@ BOTS_NO_INPUT=(
 
 # Daftar bot dengan input otomatis
 BOTS_WITH_INPUT=(
-    "BLESS:/home/hg680p/bless-bot:node main.js:n"
+    #"BLESS:/home/hg680p/bless-bot:node main.js:n"
     #"TENEO:/home/hg680p/teneo-bot:node index.js:y n y"
 )
 
@@ -139,8 +139,7 @@ start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamerQuests-BOT" "python3 bot.p
 start_bot_with_venv "TENEO" "/home/hg680p/Teneo-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "KIVA" "/home/hg680p/Kivanet-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "CAPFIZ" "/home/hg680p/Capfizz-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-# STB-6-7-8 Menjalankan DEPINED dengan virtual environment
-start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+#STB8✅start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 
 # Menjalankan MULTIPLE dengan virtual environment
 start_bot_with_venv "MULTIPLE" "/home/hg680p/MultipleLite-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
