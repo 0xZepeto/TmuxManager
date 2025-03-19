@@ -34,22 +34,22 @@ echo ""
 # Daftar bot tanpa input otomatis
 BOTS_NO_INPUT=(
     "DEPINED:/home/hg680p/Depined-BOT:node main.js:"
-    "MYGATE:/home/hg680p/mygateBot:node main.js:"
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
     "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/Oasis:node main.js:"
     "FRACTION-Ai:/home/hg680p/FractionAI-BOT:npm start:"
     "WALME:/home/hg680p/Walme-Auto-Bot:node index.js:"
     "FireVerse:/home/hg680p/Fireverse-Auto-Bot:node index.js:"
-    "AGNTHUB:/home/hg680p/Agent:node agnt.js:"
-    "SOGNI:/home/hg680p/Agent:node dailysogni.js:"
     "MELOD-AI:/home/hg680p/Agent:node melodai.js:"
     "HACKQUEST:/home/hg680p/Agent:node hq.js:"
     "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
     "ZOOP:/home/hg680p/Agent:node zoop.js:"
+    "EXEOS:/home/hg680p/Exeos-Auto-Bot:node index.js:"
 
 
-    
+    #"MYGATE:/home/hg680p/mygateBot:node main.js:"
+    #"AGNTHUB:/home/hg680p/Agent:node agnt.js:"
+    #"SOGNI:/home/hg680p/Agent:node dailysogni.js:"
     #STB1"COC:/home/hg680p/Agent:node cocnew.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     #"NODEGO:/home/hg680p/NodeGo-Auto-Bot:node index.js:"
