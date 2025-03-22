@@ -44,10 +44,8 @@ BOTS_NO_INPUT=(
     "HACKQUEST:/home/hg680p/Agent:node hq.js:"
     "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
     "ZOOP:/home/hg680p/Agent:node zoop.js:"
-    "EXEOS:/home/hg680p/Exeos-Auto-Bot:node index.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
-    start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
 
     
     #"AGNTHUB:/home/hg680p/Agent:node agnt.js:"
@@ -169,8 +167,10 @@ sleep 2
 tmux send-keys -t "KITE-Ai" "" C-m
 echo -e "${GREEN}Enter telah dikirim ke KITE-Ai.${RESET}"
 
-echo -e "${GREEN}Opsi 1 telah dikirim dengan Enter di EXEOS.${RESET}"
-
+start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
+sleep 2
+tmux send-keys -t "EXEOS" "" C-m
+echo -e "${GREEN}Enter telah dikirim ke EXEOS.${RESET}"
 
 # Jalankan TEA-TARIK dengan input otomatis
 start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
