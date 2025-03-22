@@ -171,9 +171,6 @@ echo -e "${GREEN}Enter telah dikirim ke KITE-Ai.${RESET}"
 
 start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
 sleep 5
-
-start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
-sleep 5
 tmux send-keys -t "EXEOS" "1"
 sleep 1
 tmux send-keys -t "EXEOS" C-m
