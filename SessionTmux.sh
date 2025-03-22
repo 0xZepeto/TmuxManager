@@ -46,9 +46,10 @@ BOTS_NO_INPUT=(
     "ZOOP:/home/hg680p/Agent:node zoop.js:"
     "EXEOS:/home/hg680p/Exeos-Auto-Bot:node index.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
+    "MYGATE:/home/hg680p/mygateBot:node main.js:"
 
 
-    #"MYGATE:/home/hg680p/mygateBot:node main.js:"
+    
     #"AGNTHUB:/home/hg680p/Agent:node agnt.js:"
     #"SOGNI:/home/hg680p/Agent:node dailysogni.js:"
     #STB1"COC:/home/hg680p/Agent:node cocnew.js:"
