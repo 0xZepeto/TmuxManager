@@ -170,9 +170,9 @@ tmux send-keys -t "KITE-Ai" "" C-m
 echo -e "${GREEN}Enter telah dikirim ke KITE-Ai.${RESET}"
 
 start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
-sleep 3
-tmux send-keys -t "EXEOS" C-m
-echo -e "${GREEN}Enter telah dikirim ke EXEOS.${RESET}"
+sleep 2
+tmux send-keys -t "EXEOS" "1" C-m
+echo -e "${GREEN}Opsi 1 telah dipilih secara otomatis di EXEOS.${RESET}"
 
 # Jalankan TEA-TARIK dengan input otomatis
 start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
