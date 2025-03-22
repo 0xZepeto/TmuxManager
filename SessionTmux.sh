@@ -46,6 +46,10 @@ BOTS_NO_INPUT=(
     "ZOOP:/home/hg680p/Agent:node zoop.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
+    "FISHING:/home/hg680p/FishingFrenzy-Auto-Bot:node index.js:"
+    "VENDETA:/home/hg680p/Vendetta-Auto-Bot:node index.js:"
+
+    
 
     
     #"AGNTHUB:/home/hg680p/Agent:node agnt.js:"
