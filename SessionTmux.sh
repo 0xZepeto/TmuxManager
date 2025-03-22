@@ -47,7 +47,7 @@ BOTS_NO_INPUT=(
     "EXEOS:/home/hg680p/Exeos-Auto-Bot:node index.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
-
+    start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
 
     
     #"AGNTHUB:/home/hg680p/Agent:node agnt.js:"
@@ -168,12 +168,6 @@ start_bot "KITE-Ai" "/home/hg680p/KiteAi-Auto-Bot" "node index.js"
 sleep 2
 tmux send-keys -t "KITE-Ai" "" C-m
 echo -e "${GREEN}Enter telah dikirim ke KITE-Ai.${RESET}"
-
-start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
-sleep 5
-tmux send-keys -t "EXEOS" "1"
-sleep 1
-tmux send-keys -t "EXEOS" C-m
 
 echo -e "${GREEN}Opsi 1 telah dikirim dengan Enter di EXEOS.${RESET}"
 
