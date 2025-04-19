@@ -35,19 +35,19 @@ echo ""
 BOTS_NO_INPUT=(
     "DEPINED:/home/hg680p/Depined-BOT:node main.js:"
     "MEOWTOPIA:/home/hg680p/meowBot:node main.js:"
-    "LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
+    #"LAYEREDGE:/home/hg680p/LedgeBot:node main.js:"
     "OASIS-Ai:/home/hg680p/Oasis:node main.js:"
     "FRACTION-Ai:/home/hg680p/FractionAI-BOT:npm start:"
-    "WALME:/home/hg680p/Walme-Auto-Bot:node index.js:"
-    "FireVerse:/home/hg680p/Fireverse-Auto-Bot:node index.js:"
-    "MELOD-AI:/home/hg680p/Agent:node melodai.js:"
-    "HACKQUEST:/home/hg680p/Agent:node hq.js:"
+    #"WALME:/home/hg680p/Walme-Auto-Bot:node index.js:"
+    #"FireVerse:/home/hg680p/Fireverse-Auto-Bot:node index.js:"
+    #"MELOD-AI:/home/hg680p/Agent:node melodai.js:"
+    #"HACKQUEST:/home/hg680p/Agent:node hq.js:"
     "DAWN:/home/hg680p/Dawn-BOT:node main.js:"
-    "ZOOP:/home/hg680p/Agent:node zoop.js:"
+    #"ZOOP:/home/hg680p/Agent:node zoop.js:"
     #STB8✅"LAYEREDGE_17k:/home/hg680p/LayerEdge-Auto-Bot:node main.js:"
     "MYGATE:/home/hg680p/mygateBot:node main.js:"
     "FISHING:/home/hg680p/FishingFrenzy-Auto-Bot:node index.js:"
-    "VENDETA:/home/hg680p/Vendetta-Auto-Bot:node index.js:"
+    #"VENDETA:/home/hg680p/Vendetta-Auto-Bot:node index.js:"
 
     
 
@@ -138,10 +138,10 @@ start_bot_with_venv() {
     fi
 }
 
-start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamerQuests-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+#start_bot_with_venv "DREAMQUEST" "/home/hg680p/DreamerQuests-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "TENEO" "/home/hg680p/Teneo-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "KIVA" "/home/hg680p/Kivanet-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
-start_bot_with_venv "CAPFIZ" "/home/hg680p/Capfizz-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
+#start_bot_with_venv "CAPFIZ" "/home/hg680p/Capfizz-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 #STB8✅start_bot_with_venv "DEPINED" "/home/hg680p/depinedBot" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "MULTIPLE" "/home/hg680p/MultipleLite-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
 start_bot_with_venv "FUNCTOR" "/home/hg680p/FunctorNode-BOT" "python3 bot.py" "/home/hg680p/venv/bin/activate"
@@ -171,13 +171,13 @@ sleep 2
 tmux send-keys -t "KITE-Ai" "" C-m
 echo -e "${GREEN}Enter telah dikirim ke KITE-Ai.${RESET}"
 
-start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
+#start_bot "EXEOS" "/home/hg680p/Exeos-Auto-Bot" "node index.js"
 sleep 2
 tmux send-keys -t "EXEOS" "" C-m
 echo -e "${GREEN}Enter telah dikirim ke EXEOS.${RESET}"
 
 # Jalankan TEA-TARIK dengan input otomatis
-start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
+#start_bot "TEA-TARIK" "/home/hg680p/Tea-Tarik" "node index.js"
 sleep 3
 tmux send-keys -t "TEA-TARIK" "y" C-m  # Kirim input "y"
 sleep 3
